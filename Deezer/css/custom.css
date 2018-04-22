@@ -240,3 +240,179 @@
     width: 214px;
 
 }
+
+/*Recomendaciones*/
+
+.card{
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(25,25,34,.16);
+  margin-top: 20px;
+  position: relative;
+  transition-duration: .15s;
+  transition-property: box-shadow,-webkit-box-shadow;
+  display: block;
+  min-width: 600px;
+}
+
+.thumbnail2{
+  float: right;
+}
+
+.picture-link{
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+.info{
+  box-sizing: border-box;
+ display: block;
+height: 352px;
+position: relative;
+padding: 30px;
+
+}
+
+.sticker{
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .3px;
+  padding: 3px 6px;
+  vertical-align: top;
+  white-space: nowrap;
+  background: #32323D;
+  margin-bottom: 15px;
+
+}
+
+.title-separ{
+  border-bottom: 1px solid #efeff2;
+  color: #c2c2ca;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  display: table;
+  font-size: 12px;
+}
+
+.heading-3{
+  font-size: 18px;
+  letter-spacing: .25px;
+  margin-bottom: 5px;
+  color: #72727d;
+  font-weight: 400;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.link-heading{
+  color: #32323d;
+}
+
+.heading-4{
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: Open Sans,Arial,sans-serif;
+
+}
+
+.info-down{
+    bottom: 30px;
+    left: 30px;
+    position: absolute;
+    right: 30px;
+    display: block;
+}
+
+.thumbnail-bordered{
+  display: inline-block;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  transform: translateZ(0);
+  vertical-align: top;
+  float: left;
+  
+}
+
+.details{
+  display: block;
+height: 100%;
+margin-left: 100px;
+position: relative;
+ box-sizing: border-box;
+}
+
+.visual{
+  border-right: 1px solid #efeff2;
+float: left;
+height: 250px;
+width: 250px;
+}
+
+.playlist-img{
+  display: inline-block;
+margin: 0;
+max-height: 100%;
+max-width: 100%;
+overflow: hidden;
+position: relative;
+transform: translateZ(0);
+vertical-align: top;
+}
+
+.info-playlist{
+  box-sizing: border-box;
+display: block;
+height: 250px;
+margin-left: 250px;
+position: relative;
+padding: 30px;
+}
+
+.info-down-playlist{
+  bottom: 30px;
+left: 30px;
+position: absolute;
+right: 30px;
+}
+
+.heading-5{
+  border-bottom: 1px solid #efeff2;
+box-shadow: none;
+margin-bottom: 3px;
+padding-bottom: 3px;
+color: #c2c2ca;
+font-size: 12px;
+}
+
+.heading-5-sub{
+  color: #92929d;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+}
+
+
+.visual2{
+  border-left: 1px solid #efeff2;
+float: right;
+height: 352px;
+width: 477px;
+}
+
+.album-img{
+  display: inline-block;
+margin: 0;
+max-height: 100%;
+max-width: 100%;
+overflow: hidden;
+position: relative;
+transform: translateZ(0);
+vertical-align: top;
+
+}

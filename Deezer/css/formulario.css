@@ -1,0 +1,74 @@
+.btn-suscripcion{
+	font-size: 12px;
+	border-radius: 3px;
+	border: 1px solid #d1d1d7;
+	cursor: pointer;
+}
+
+.heading-2{
+	color: #72727d;
+	border-bottom: 1px solid #e8e8ec;
+}
+
+.wrapper{
+	box-shadow: 0 0 6px rgba(25,25,34,.16);
+	border-radius: 4px;
+	padding: 24px,
+}
+
+.container{
+	padding: 24px;
+}
+
+.label-text{
+	font-size: 12px;
+	color: #72727d;
+	font-weight: 700;
+	text-align: right;
+    float: right;
+	vertical-align: middle;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-top: 8px;
+	position: relative;
+}
+
+.input-form1{
+	border: 1px solid #d1d1d7;
+	border-radius: 3px;
+	box-sizing: border-box;
+	margin-right: 12px;
+	font-size: 12px;
+	padding: 5px 12px;
+	line-height: 10px;
+	min-height: 32px;
+	width: 215px;
+	vertical-align: middle;
+	background-color: #f8f8f9;
+	max-width: 100%;
+}
+
+.input-form2{
+	border: 1px solid #d1d1d7;
+	border-radius: 3px;
+	box-sizing: border-box;
+	margin-right: 12px;
+	font-size: 12px;
+	padding: 5px 12px;
+	line-height: 10px;
+	min-height: 32px;
+	width: 215px;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	max-width: 100%;
+}
+
+.btn-radio{
+	font-size: 12px;
+}
+
+.combox{
+	width: 215px;
+	vertical-align: middle;
+}
+
