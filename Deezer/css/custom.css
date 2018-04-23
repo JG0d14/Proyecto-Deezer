@@ -416,3 +416,13 @@ transform: translateZ(0);
 vertical-align: top;
 
 }
+.home-img{
+      height: 250px;
+   
+    
+   
+    vertical-align: top;
+  
+    position: absolute;
+
+}
