@@ -256,3 +256,13 @@ a.button {
   font-size: 14px;
   border-radius: 3px;
 }
+.div-admin{
+  height: 200px ;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ 
+}
