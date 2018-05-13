@@ -1,4 +1,27 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION["usr"]) || !isset($_SESSION["psw"]))
+        header("Location: index.php");
 
+    include("class/class-conexion.php");
+    $conexion = new Conexion();
+     $sql = sprintf( 
+        "SELECT codigo_usuario, codigo_tipo_usuario, ". 
+            "correo, nombre, contrasena FROM tbl_usuarios ".
+        "WHERE correo = '%s' and contrasena = '%s' and codigo_tipo_usuario = 1",
+        $_SESSION["usr"],
+        $_SESSION["psw"]
+    );
+    //echo $sql;
+    //exit;
+    $resultado = $conexion->ejecutarConsulta($sql);
+    $respuesta = array();
+    if ($conexion->cantidadRegistros($resultado)<=0){
+           header("Location: index.php");
+    }
+    
+
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>

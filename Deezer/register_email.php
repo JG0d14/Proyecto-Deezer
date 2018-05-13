@@ -16,7 +16,7 @@
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-3 col-3">
 							<div>
 								<img  src="img/deezerlogo.png" >
-								<a class="button" href="index.html">Conectarse</a>
+								<a class="button" href="index.php">Conectarse</a>
 							</div>
 						</div>
 					</div>			
@@ -40,20 +40,34 @@
 
 						<form method="GET" action="procesar.php">
 						    <div>
-							    <input class="index-input" id="txt-correo" type="text" name="txt-correo" placeholder="Correo electrónico">
+							    <input class="index-input" id="txt-correo" type="text" name="txt-correo" placeholder="Correo electrónico" required>
 						    </div>
 						    <div>
-							    <input class="index-input" id="txt-contrasena" type="password" name="txt-contrasena" placeholder="Contraseña">
+							    <input class="index-input" id="txt-contrasena" type="password" name="txt-contrasena" placeholder="Contraseña" required>
 						    <div>
-							    <select id="slc-sexo" name="slc-sexo" class="select-register">					
+							    <select id="slc-sexo" name="slc-sexo" class="select-register" required>					
 								    <option value="1">Sexo</option>
 								    <option value="2">Mujer</option>
 								    <option value="3">Hombre</option>
 							    </select>
-							    <select id="slc-edad" name="slc-edad" class="select-register">					
+							    <select id="slc-edad" name="slc-edad" class="select-register" required>					
 								    <option value="0">Edad</option>
-								    <option value="1">1</option>
-								    <option value="2">2</option>
+								    <option value="15">15</option>
+								    <option value="16">16</option>
+								    <option value="17">17</option>
+								    <option value="18">18</option>
+								    <option value="19">19</option>
+								    <option value="20">20</option>
+								    <option value="21">21</option>
+								    <option value="22">22</option>
+								    <option value="23">23</option>
+								    <option value="24">24</option>
+								    <option value="25">25</option>
+								    <option value="26">26</option>
+								    <option value="27">27</option>
+								    <option value="28">28</option>
+								    <option value="29">29</option>
+
 							    </select>
 						    </div>
 						    <div><br>
