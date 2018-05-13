@@ -6,7 +6,7 @@
 		<title></title>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link  type="text/css" href="css/estilos.css" rel="stylesheet">
 	</head>
 <body class="img-body" style="background-image: url(img/fondo.jpg)">
 	<div>
@@ -37,26 +37,29 @@
 					    	</div>
 						</div>
 						<br>
-						<div>
-							<input class="index-input" type="text" name="correo" placeholder="Correo electrónico">
-						</div>
-						<div>
-							<input class="index-input" type="text" name="password" placeholder="Contraseña">
-						<div>
-							<select class="select-register">					
-								<option value="1">Sexo</option>
-								<option value="2">Mujer</option>
-								<option value="3">Hombre</option>
-							</select>
-							<select class="select-register">					
-								<option value="1">Edad</option>
-								<option value="2">1</option>
-								<option value="3">2</option>
-							</select>
-						</div>
-						<div><br>
-							<button class="btn-conectarse">Registrarse</button>
-						</div>
+
+						<form method="GET" action="procesar.php">
+						    <div>
+							    <input class="index-input" id="txt-correo" type="text" name="txt-correo" placeholder="Correo electrónico">
+						    </div>
+						    <div>
+							    <input class="index-input" id="txt-contrasena" type="password" name="txt-contrasena" placeholder="Contraseña">
+						    <div>
+							    <select id="slc-sexo" name="slc-sexo" class="select-register">					
+								    <option value="1">Sexo</option>
+								    <option value="2">Mujer</option>
+								    <option value="3">Hombre</option>
+							    </select>
+							    <select id="slc-edad" name="slc-edad" class="select-register">					
+								    <option value="0">Edad</option>
+								    <option value="1">1</option>
+								    <option value="2">2</option>
+							    </select>
+						    </div>
+						    <div><br>
+							    <input id="btn-guardar" type="button" value="Registrarse" class="btn btn-primary btn-conectarse" onclick="guardarRegistro();">
+						    </div>
+                        </form>
 						<div class="index-link">
 							<a href="register_num.html" style="color: #efeff2;">Registrarse con un numero de telefono</a>
 						</div>
@@ -68,6 +71,8 @@
 			</footer>
 		</div>
 		
-		<script src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/controlador.js"></script>
 	</body>
 </html>

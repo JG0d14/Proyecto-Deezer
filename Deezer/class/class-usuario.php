@@ -5,10 +5,11 @@
 		private $codigoUsuario;
 		private $correo;
 		private $contrasena;
+		private $sexo;
+		private $edad;
+		private $fecha;
 		private $nombreUsuario;
 		private $apellido;
-		private $sexo;
-		private $fecha;
 		private $direccion;
 		private $codigopostal;
 		private $ciudad;
@@ -19,10 +20,11 @@
 		public function __construct($codigoUsuario,
 					$correo,
 					$contrasena,
+					$sexo,
+					$edad,
+					$fecha,
 					$nombreUsuario,
 					$apellido,
-					$sexo,
-					$fecha,
 					$direccion,
 					$codigopostal,
 					$ciudad,
@@ -32,10 +34,11 @@
 			$this->codigoUsuario = $codigoUsuario;
 			$this->correo = $correo;
 			$this->contrasena = $contrasena;
+			$this->sexo = $sexo;
+			$this->edad = $edad;
+			$this->fecha = $fecha;
 			$this->nombreUsuario = $nombreUsuario;
 			$this->apellido = $apellido;
-			$this->sexo = $sexo;
-			$this->fecha = $fecha;
 			$this->direccion = $direccion;
 			$this->codigopostal = $codigopostal;
 			$this->ciudad = $ciudad;
@@ -61,6 +64,24 @@
 		public function setContrasena($contrasena){
 			$this->contrasena = $contrasena;
 		}
+		public function getSexo(){
+			return $this->sexo;
+		}
+		public function setSexo($sexo){
+			$this->sexo = $sexo;
+		}
+		public function getEdad(){
+			return $this->edad;
+		}
+		public function setEdad($edad){
+			$this->edad = $edad;
+		}
+		public function getFecha(){
+			return $this->fecha;
+		}
+		public function setFecha($fecha){
+			$this->fecha = $fecha;
+		}
 		public function getNombreUsuario(){
 			return $this->nombreUsuario;
 		}
@@ -72,18 +93,6 @@
 		}
 		public function setApellido($apellido){
 			$this->apellido = $apellido;
-		}
-		public function getSexo(){
-			return $this->sexo;
-		}
-		public function setSexo($sexo){
-			$this->sexo = $sexo;
-		}
-		public function getFecha(){
-			return $this->fecha;
-		}
-		public function setFecha($fecha){
-			$this->fecha = $fecha;
 		}
 		public function getDireccion(){
 			return $this->direccion;
@@ -125,10 +134,11 @@
 			return "CodigoUsuario: " . $this->codigoUsuario . 
 				" Correo: " . $this->correo . 
 				" Contrasena: " . $this->contrasena . 
+				" Sexo: " . $this->sexo . 
+				" Edad: " . $this->edad . 
+				" Fecha: " . $this->fecha . 
 				" NombreUsuario: " . $this->nombreUsuario . 
 				" Apellido: " . $this->apellido . 
-				" Sexo: " . $this->sexo . 
-				" Fecha: " . $this->fecha . 
 				" Direccion: " . $this->direccion . 
 				" Codigopostal: " . $this->codigopostal . 
 				" Ciudad: " . $this->ciudad . 
@@ -136,5 +146,39 @@
 				" UrlImagen: " . $this->urlImagen . 
 				" CodigoTipoUsuario: " . $this->codigoTipoUsuario;
 		}
+
+
+		public function guardarUsuario($conexion){
+			$sql = 	sprintf("INSERT INTO tbl_usuarios(correo, contrasena, sexo, edad) ".
+					"VALUES ('%s','%s','%s','%s')",
+					$conexion->antiInyeccion($this->correo),
+					$conexion->antiInyeccion($this->contrasena),
+					$conexion->antiInyeccion($this->sexo),
+					$conexion->antiInyeccion($this->edad),
+				);
+			
+			$resultado = $conexion->ejecutarConsulta($sql);
+			if ($resultado){
+				//Se agrego con exito
+				$sql = 	sprintf("SELECT codigo_usuario, correo, contrasena, ".
+						"sexo, edad".
+						"FROM tbl_usuarios ".
+						"WHERE codigo_usuario = %s",
+						$conexion->ultimoId()
+					);
+				$resultadoUsuario = $conexion->ejecutarConsulta($sql);
+				$fila = $conexion->obtenerFila($resultadoUsuario);
+				$fila["codigo_resultado"] = 0;
+				$fila["mensaje_resultado"] = "Registro insertado con éxito";
+				echo json_encode($fila);
+			}else{
+				//Fallo
+				$respuesta["codigo_resultado"] = 1;
+				$respuesta["mensaje_resultado"] = "No se pudo guardar el registro";
+				$respuesta["sql"] = $sql;
+				echo json_encode($respuesta);
+			}
+		}
+
 	}
 ?>
